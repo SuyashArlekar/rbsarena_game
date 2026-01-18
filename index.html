@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Battle Arena</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>RPS <span class="highlight">Arena</span></h1>
+        </header>
+
+        <div class="scoreboard">
+            <div class="score-card user">
+                <span class="score-label">You</span>
+                <span id="user-score" class="score-value">0</span>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="score-card comp">
+                <span class="score-label">CPU</span>
+                <span id="comp-score" class="score-value">0</span>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <!-- Selection Phase -->
+            <div id="selection-phase" class="phase active">
+                <p class="instruction">Choose your weapon</p>
+                <div class="choices">
+                    <button class="choice-btn" data-choice="rock" aria-label="Rock">
+                        <div class="icon-wrapper rock">
+                            <i class="fa-regular fa-hand-back-fist"></i>
+                        </div>
+                    </button>
+                    <button class="choice-btn" data-choice="paper" aria-label="Paper">
+                        <div class="icon-wrapper paper">
+                            <i class="fa-regular fa-hand"></i>
+                        </div>
+                    </button>
+                    <button class="choice-btn" data-choice="scissors" aria-label="Scissors">
+                        <div class="icon-wrapper scissors">
+                            <i class="fa-regular fa-hand-scissors"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Phase -->
+            <div id="result-phase" class="phase hidden">
+                <div class="duel-container">
+                    <div class="duel-box user-pick">
+                        <p>You Picked</p>
+                        <div class="pick-circle" id="user-pick-icon">
+                            <!-- Icon injected via JS -->
+                        </div>
+                    </div>
+                    
+                    <div class="result-middle">
+                        <h2 id="result-text">Waiting...</h2>
+                        <button id="play-again-btn" class="primary-btn">Play Again</button>
+                    </div>
+
+                    <div class="duel-box comp-pick">
+                        <p>CPU Picked</p>
+                        <div class="pick-circle" id="comp-pick-icon">
+                            <!-- Icon injected via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="controls">
+            <button id="reset-btn" class="secondary-btn">
+                <i class="fa-solid fa-rotate-left"></i> Reset Score
+            </button>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
